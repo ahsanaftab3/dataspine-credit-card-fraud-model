@@ -1,4 +1,4 @@
-FROM docker.io/dataspine/predict-cpu:0.1.1prod
+FROM docker.io/dataspine/predict-cpu:0.2.0prod
 
 LABEL DATASPINE_IMAGE_REGISTRY_URL=docker.io
 LABEL DATASPINE_IMAGE_REGISTRY_REPO=dataspine
