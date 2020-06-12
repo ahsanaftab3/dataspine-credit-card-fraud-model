@@ -43,7 +43,6 @@ RUN \
   echo $DATASPINE_MODEL_PREDICT_CONDA_ENV_NAME \ 
   && echo ""
 
-RUN conda update --all
 # Note:  If you see the following error, you don't have HTTP_PROXY and HTTPS_PROXY env variables set properly:
 #  CondaHTTPError: HTTP 000 CONNECTION FAILED for url <https://repo.continuum.io/pkgs/free/noarch/repodata.json.bz2>
 RUN \
@@ -74,6 +73,8 @@ RUN \
 COPY ./dataspine_conda_environment.yml $DATASPINE_MODEL_PATH/dataspine_conda_environment.yml
 COPY ./dataspine_condarc .condarc
 
+RUN conda update --all
+
 RUN \
   if [ -f "$DATASPINE_MODEL_PATH/dataspine_conda_environment.yml" ]; then \
     ls $DATASPINE_MODEL_PATH/dataspine_conda_environment.yml \
@@ -101,9 +102,9 @@ RUN \
   echo "set -o allexport; source $DATASPINE_MODEL_PATH/dataspine_modelserver.properties; set +o allexport" >> ~/.bashrc
 
 # Moved these to the bottom to avoid re-doing everything above when DATASPINE_MODEL_TAG changes
-LABEL DATASPINE_MODEL_TAG=v5
+LABEL DATASPINE_MODEL_TAG=v6
 ENV \
-  DATASPINE_MODEL_TAG=v5
+  DATASPINE_MODEL_TAG=v6
 
 RUN \
   source activate $DATASPINE_MODEL_PREDICT_CONDA_ENV_NAME \
