@@ -4,7 +4,7 @@ FROM docker.io/dataspine/predict-cpu:0.1.1prod
 LABEL DATASPINE_IMAGE_REGISTRY_URL=docker.io
 LABEL DATASPINE_IMAGE_REGISTRY_REPO=dataspine
 LABEL DATASPINE_IMAGE_REGISTRY_NAMESPACE=predict
-LABEL DATASPINE_IMAGE_REGISTRY_BASE_TAG=0.2.0-test
+LABEL DATASPINE_IMAGE_REGISTRY_BASE_TAG=0.1.1prod
 LABEL DATASPINE_MODEL_NAME=ccfd
 LABEL DATASPINE_MODEL_TYPE=keras
 LABEL DATASPINE_MODEL_RUNTIME=python
@@ -100,9 +100,9 @@ RUN \
   echo "set -o allexport; source $DATASPINE_MODEL_PATH/dataspine_modelserver.properties; set +o allexport" >> ~/.bashrc
 
 # Moved these to the bottom to avoid re-doing everything above when DATASPINE_MODEL_TAG changes
-LABEL DATASPINE_MODEL_TAG=v1
+LABEL DATASPINE_MODEL_TAG=v4
 ENV \
-  DATASPINE_MODEL_TAG=v1
+  DATASPINE_MODEL_TAG=v4
 
 RUN \
   source activate $DATASPINE_MODEL_PREDICT_CONDA_ENV_NAME \
