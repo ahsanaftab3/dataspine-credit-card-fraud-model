@@ -95,7 +95,7 @@ RUN \
 
 COPY . $DATASPINE_MODEL_PATH
 
-RUN 
+RUN \
   echo "set -o allexport; source $DATASPINE_MODEL_PATH/dataspine_modelserver.properties; set +o allexport" >> ~/.bashrc
 
 # Moved these to the bottom to avoid re-doing everything above when DATASPINE_MODEL_TAG changes
