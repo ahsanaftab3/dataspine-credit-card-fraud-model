@@ -47,6 +47,7 @@ RUN \
 #  CondaHTTPError: HTTP 000 CONNECTION FAILED for url <https://repo.continuum.io/pkgs/free/noarch/repodata.json.bz2>
 RUN \
   conda create --name $DATASPINE_MODEL_PREDICT_CONDA_ENV_NAME python=3.6 \
+  && conda update -n base conda
   && echo "source activate $DATASPINE_MODEL_PREDICT_CONDA_ENV_NAME" >> ~/.bashrc 
 
 # Note:  This runs *after* the environment is setup above.
