@@ -48,8 +48,8 @@ RUN \
 
 RUN \
   #conda update -n base conda \
-  hash -r pip \
-  && conda create --name $DATASPINE_MODEL_PREDICT_CONDA_ENV_NAME python=3.6.5 \
+  conda create --name $DATASPINE_MODEL_PREDICT_CONDA_ENV_NAME \
+  #python=3.6.5 \
   && echo "source activate $DATASPINE_MODEL_PREDICT_CONDA_ENV_NAME" >> ~/.bashrc 
 
 # Note:  This runs *after* the environment is setup above.
