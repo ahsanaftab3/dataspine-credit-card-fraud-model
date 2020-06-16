@@ -56,7 +56,7 @@ RUN \
 # RUN useradd -m $SETUSER
 # USER $SETUSER
 USER root
-RUN chown -R /opt/conda
+RUN chown -R root: /opt/conda
 ### 
 
 RUN \
