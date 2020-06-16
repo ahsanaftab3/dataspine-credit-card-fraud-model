@@ -1,3 +1,6 @@
+channels:
+  - conda-forge
+  - defaults
 dependencies:
   - openssl=1.0.2l=0
   - pandas=0.22.0
