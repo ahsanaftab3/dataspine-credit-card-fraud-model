@@ -21,4 +21,5 @@ show_channel_urls: True
 
 #to allow downgrades during conflict errors
 allow_conda_downgrades: true
+allow_other_channels: true
 
