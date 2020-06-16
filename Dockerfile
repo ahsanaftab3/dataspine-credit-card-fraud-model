@@ -73,8 +73,6 @@ RUN \
 COPY ./dataspine_conda_environment.yml $DATASPINE_MODEL_PATH/dataspine_conda_environment.yml
 COPY ./dataspine_condarc .condarc
 
-RUN conda config --set allow_conda_downgrades true \
-&& conda install conda=4.6.14
 
 RUN \
   if [ -f "$DATASPINE_MODEL_PATH/dataspine_conda_environment.yml" ]; then \
