@@ -9,8 +9,8 @@
 # (this can be changed by modifying the channel_alias key; see below).
 # The default is just 'defaults'.
 channels:
-  - conda-forge 
   - defaults
+  - conda-forge 
 #  - conda-forge/label/broken
 
 
