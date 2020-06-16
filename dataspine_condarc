@@ -11,7 +11,7 @@
 channels:
   - conda-forge 
   - defaults
-  - conda-forge/label/broken
+#  - conda-forge/label/broken
 
 
 # Show channel URLs when displaying what is going to be downloaded
@@ -23,5 +23,5 @@ show_channel_urls: True
 
 #to allow downgrades during conflict errors
 allow_conda_downgrades: True
-allow_other_channels: True
+#allow_other_channels: True
 
