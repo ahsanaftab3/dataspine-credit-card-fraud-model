@@ -73,6 +73,7 @@ RUN \
 COPY ./dataspine_conda_environment.yml $DATASPINE_MODEL_PATH/dataspine_conda_environment.yml
 COPY ./dataspine_condarc .condarc
 
+RUN conda install python==3.6
 
 RUN \
   if [ -f "$DATASPINE_MODEL_PATH/dataspine_conda_environment.yml" ]; then \
