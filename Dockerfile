@@ -1,4 +1,4 @@
-FROM docker.io/dataspine/predict-cpu:0.1.1prod
+FROM docker.io/dataspine/predict-cpu:latest
 
 
 LABEL DATASPINE_IMAGE_REGISTRY_URL=docker.io
@@ -46,7 +46,7 @@ RUN \
 # Note:  If you see the following error, you don't have HTTP_PROXY and HTTPS_PROXY env variables set properly:
 #  CondaHTTPError: HTTP 000 CONNECTION FAILED for url <https://repo.continuum.io/pkgs/free/noarch/repodata.json.bz2>
 
-USER root
+#USER root
 
 RUN \
   #conda update -n base conda \
