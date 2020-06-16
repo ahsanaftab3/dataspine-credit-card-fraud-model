@@ -45,11 +45,9 @@ RUN \
 
 # Note:  If you see the following error, you don't have HTTP_PROXY and HTTPS_PROXY env variables set properly:
 #  CondaHTTPError: HTTP 000 CONNECTION FAILED for url <https://repo.continuum.io/pkgs/free/noarch/repodata.json.bz2>
-RUN \
-  conda install conda=4.6.0
 
 RUN \
-  #conda update -n base conda
+  conda update -n base conda
   conda create --name $DATASPINE_MODEL_PREDICT_CONDA_ENV_NAME python=3.6 \
   && echo "source activate $DATASPINE_MODEL_PREDICT_CONDA_ENV_NAME" >> ~/.bashrc 
 
