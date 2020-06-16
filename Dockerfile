@@ -46,7 +46,18 @@ RUN \
 # Note:  If you see the following error, you don't have HTTP_PROXY and HTTPS_PROXY env variables set properly:
 #  CondaHTTPError: HTTP 000 CONNECTION FAILED for url <https://repo.continuum.io/pkgs/free/noarch/repodata.json.bz2>
 
+
+###new stuff below
 #USER root
+
+# Set user
+ENV SETUSER myuser
+
+RUN useradd -m $SETUSER
+USER $SETUSER
+
+RUN chown -R $SETUSER: /opt/conda
+### 
 
 RUN \
   #conda update -n base conda \
