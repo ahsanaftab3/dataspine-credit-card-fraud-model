@@ -50,13 +50,13 @@ RUN \
 ###new stuff below
 #USER root
 
-# Set user
-ENV SETUSER myuser
+# # Set user
+# ENV SETUSER myuser
 
-RUN useradd -m $SETUSER
-USER $SETUSER
-
-RUN chown -R $SETUSER: /opt/conda
+# RUN useradd -m $SETUSER
+# USER $SETUSER
+USER root
+RUN chown -R /opt/conda
 ### 
 
 RUN \
