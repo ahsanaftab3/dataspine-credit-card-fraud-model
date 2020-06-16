@@ -45,6 +45,10 @@ RUN \
 
 # Note:  If you see the following error, you don't have HTTP_PROXY and HTTPS_PROXY env variables set properly:
 #  CondaHTTPError: HTTP 000 CONNECTION FAILED for url <https://repo.continuum.io/pkgs/free/noarch/repodata.json.bz2>
+RUN which conda
+
+RUN python -m pip install --force-reinstall pip
+
 
 RUN \
   #conda update -n base conda \
