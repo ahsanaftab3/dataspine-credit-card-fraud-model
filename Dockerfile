@@ -73,12 +73,12 @@ RUN \
 COPY ./dataspine_conda_environment.yml $DATASPINE_MODEL_PATH/dataspine_conda_environment.yml
 COPY ./dataspine_condarc .condarc
 
-RUN conda install python==3.6
 
 RUN \
   if [ -f "$DATASPINE_MODEL_PATH/dataspine_conda_environment.yml" ]; then \
     ls $DATASPINE_MODEL_PATH/dataspine_conda_environment.yml \
     && echo "" \
+    && conda install python==3.6
     && echo "Updating Conda Environment '$DATASPINE_MODEL_PREDICT_CONDA_ENV_NAME' with Model Dependencies from '$DATASPINE_MODEL_PATH/dataspine_conda_environment.yml'..." \
     && echo "" \
     && conda env update --name $DATASPINE_MODEL_PREDICT_CONDA_ENV_NAME --file $DATASPINE_MODEL_PATH/dataspine_conda_environment.yml \
