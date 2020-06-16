@@ -1,4 +1,4 @@
-FROM docker.io/dataspine/predict-cpu:latest
+FROM docker.io/dataspine/predict-ccfd:a
 
 
 LABEL DATASPINE_IMAGE_REGISTRY_URL=docker.io
