@@ -96,7 +96,7 @@ RUN \
     && echo "" \
     && echo "Updating Conda Environment '$DATASPINE_MODEL_PREDICT_CONDA_ENV_NAME' with Model Dependencies from '$DATASPINE_MODEL_PATH/dataspine_conda_environment.yml'..." \
     && echo "" \
-    && conda update -n base conda \
+    && chmod -R a+x /opt/conda/envs \
     && conda env update --name $DATASPINE_MODEL_PREDICT_CONDA_ENV_NAME --file $DATASPINE_MODEL_PATH/dataspine_conda_environment.yml \
     && echo "" \
     && echo "...Conda Environment Updated with Model Requirements!" \
