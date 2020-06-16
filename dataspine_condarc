@@ -22,6 +22,6 @@ show_channel_urls: True
 # https://conda.io/docs/user-guide/configuration/use-condarc.html
 
 #to allow downgrades during conflict errors
-allow_conda_downgrades: true
-allow_other_channels: true
+allow_conda_downgrades: True
+allow_other_channels: True
 
