@@ -47,18 +47,6 @@ RUN \
 #  CondaHTTPError: HTTP 000 CONNECTION FAILED for url <https://repo.continuum.io/pkgs/free/noarch/repodata.json.bz2>
 
 
-###new stuff below
-#USER root
-
-# # Set user
-# ENV SETUSER myuser
-
-# RUN useradd -m $SETUSER
-# USER $SETUSER
-# USER root
-# RUN chown -R root: /opt/conda
-### 
-
 RUN \
   #conda update -n base conda \
   conda create --name $DATASPINE_MODEL_PREDICT_CONDA_ENV_NAME \
@@ -119,9 +107,9 @@ RUN \
   echo "set -o allexport; source $DATASPINE_MODEL_PATH/dataspine_modelserver.properties; set +o allexport" >> ~/.bashrc
 
 # Moved these to the bottom to avoid re-doing everything above when DATASPINE_MODEL_TAG changes
-LABEL DATASPINE_MODEL_TAG=v1
+LABEL DATASPINE_MODEL_TAG=v2
 ENV \
-  DATASPINE_MODEL_TAG=v1
+  DATASPINE_MODEL_TAG=v2
 
 RUN \
   source activate $DATASPINE_MODEL_PREDICT_CONDA_ENV_NAME \
